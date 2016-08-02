@@ -3,7 +3,7 @@ Contributors: sc0ttkclark, pglewis
 Donate link: http://podsfoundation.org/donate/
 Tags: pods, storage type, migrate, storage type, convert
 Requires at least: 4.2
-Tested up to: 4.2.2
+Tested up to: 4.6
 Stable tag: 0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -23,8 +23,16 @@ Additional options can be:
 * Change the pod name used for new pod: `--new_name=my_new_pod` (This will bypass the attempt to create a temporary pod / delete the old one, you will end up with two different pods which are identical and have the same content)
 * Additional fields mapping: Coming soon
 * Verbose logging in terminal: `--verbose`
+* Currently only supports (and is tested against) Advanced Content Types converting to other pod types
+
+`wp pods-convert migrate --pod=your_act --new_type=post_type --new_storage=meta --new_name=your_cpt`
 
 The migration will create a temporary pod from the pod, migrate all items from that pod 100 at a time, then attempt to delete the pod and rename the temporary pod back to the original pod name.
+
+== Future features ==
+
+* Additional fields mapping (change which fields map to which fields)
+* Convert from other content types to Advanced Content Types
 
 == Installation ==
 
